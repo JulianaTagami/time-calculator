@@ -1,8 +1,12 @@
 import React from "react";
+import { ITarefa } from "../../types/ITarefas";
 import Button from "../buttons";
 import style from './Form.module.scss';
+import { v4 as uuidv4 }
 
-class Forms extends React.Component {
+class Forms extends React.Component <{
+    setTarefas: React.Dispatch <React.SetStateAction<ITarefa[]>>
+}> {
     state = {
         tarefa: " ",
         tempo: "00:00:00"
@@ -10,6 +14,20 @@ class Forms extends React.Component {
 
     addTarefa(evento: React.FormEvent<HTMLFormElement>) {
         evento.preventDefault();
+        this.props.setTarefas(tarefasAntigas => 
+            [
+                ...tarefasAntigas,
+                {
+                    ...this.state,
+                    selecionado: false,
+                    completado: false
+                }
+            ]
+        );
+        this.setState({
+            tarefa: "",
+            tempo: "00:00:00"
+        })
     }
 
     render() {
@@ -18,14 +36,14 @@ class Forms extends React.Component {
                 <div className={style.inputContainer}>
                     <label htmlFor="tarefa">
                         Adicione um novo estudo
-
                     </label>
+
                     <input type="text"
                     name="tarefa"
                     value={this.state.tarefa}
                     onChange={evento => this.setState({ ...this.state, tarefa: evento.target.value })}
                     id="tarefa"
-                    placeholder="O que você quer estudar"
+                    placeholder="O que quer estudar?"
                     required
                     />
 

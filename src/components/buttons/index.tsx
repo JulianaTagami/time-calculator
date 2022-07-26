@@ -1,19 +1,18 @@
 import React from "react";
 import style from './Botao.module.scss';
 
-interface IProps {
-    children: React.ReactNode;
-  }
 
-class Button extends React.Component <IProps>{
-
+class Button extends React.Component <any,{ 
+    type?: "button" | "submit" | "reset" | undefined
+  }> {
     render() {
-        return (
-            <button className={style.botao}>
-                {this.props.children}
-            </button>
-        )
-    }
-}
-
-export default Button;
+      const { type = "button" } = this.props;
+       return (
+         <button type={type} className={style.botao}>
+             {this.props.children}
+           </button>
+          )
+       }
+      }
+  
+export default Button; 

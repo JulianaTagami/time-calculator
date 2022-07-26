@@ -6,6 +6,7 @@ interface IProps {
   }
 
 class Button extends React.Component <IProps>{
+
     render() {
         return (
             <button className={style.botao}>

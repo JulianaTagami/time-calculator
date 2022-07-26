@@ -7,9 +7,14 @@ class Forms extends React.Component {
         tarefa: " ",
         tempo: "00:00:00"
     }
+
+    addTarefa(evento: React.FormEvent<HTMLFormElement>) {
+        evento.preventDefault();
+    }
+
     render() {
         return (
-            <form className={style.novaTarefa}>
+            <form className={style.novaTarefa} onSubmit={this.addTarefa.bind(this)}>
                 <div className={style.inputContainer}>
                     <label htmlFor="tarefa">
                         Adicione um novo estudo
@@ -17,9 +22,9 @@ class Forms extends React.Component {
                     </label>
                     <input type="text"
                     name="tarefa"
-                    id="tarefa"
                     value={this.state.tarefa}
                     onChange={evento => this.setState({ ...this.state, tarefa: evento.target.value })}
+                    id="tarefa"
                     placeholder="O que você quer estudar"
                     required
                     />
@@ -43,7 +48,7 @@ class Forms extends React.Component {
                     />
                 </div>
 
-            <Button>
+            <Button type="submit">
                 Adicionar
             </Button>
             </form>

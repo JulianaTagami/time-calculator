@@ -8,14 +8,15 @@ interface Props {
 }
 
 
-function List({ tarefas }: Props) {
+function List({ tarefas, selecionaTarefa }: Props) {
     return (
         <aside className={style.listaTarefas}>
             <h2> Estudos do Dia </h2>
             <ul>
-                {tarefas.map((item, index) => (
+                {tarefas.map(item => (
                     <Item
-                    key={index}
+                    selecionaTarefa={selecionaTarefa}
+                    key={item.id}
                     {...item}
                     />
                 ))}

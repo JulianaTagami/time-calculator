@@ -18,7 +18,7 @@
 
 >
 ><h2>My Project</h2>
->Link to finished project: https://getcoffee-landingpage.vercel.app
+>Link to finished project: https://time-calculator-sigma.vercel.app
 >
 >
 >Project challenges: customize SCSS, Buttons, Chronometer, Forms, list and responsive pages.

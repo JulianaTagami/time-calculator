@@ -21,7 +21,7 @@
 >Link to finished project: https://time-calculator-sigma.vercel.app
 >
 >
->Project challenges: customize SCSS, Buttons, Chronometer, Forms, list and responsive pages.
+>Project challenges: customize SCSS, Buttons, Chronometer, Forms, list and Responsive Pages.
 ><h2>Author</h2>
 > FrontEnd By Alura 
 ><br>
